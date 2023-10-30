@@ -6,8 +6,11 @@ export default function Searchbar({ onSubmit }) {
 
   const handleFormSubmit = e => {
     e.preventDefault();
+    const searchQuery = searchWord.trim();
 
-    onSubmit(searchWord.trim());
+    if (!searchQuery) return;
+    
+    onSubmit(searchQuery);
     reset();
   };
 
@@ -31,8 +34,8 @@ export default function Searchbar({ onSubmit }) {
           type="text"
           value={searchWord}
           onChange={handleInput}
-          autocomplete="off"
-          autofocus
+          autoComplete="off"
+          autoFocus
           placeholder="Search images and photos"
         />
       </form>

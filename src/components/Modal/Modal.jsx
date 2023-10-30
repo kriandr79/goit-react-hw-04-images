@@ -15,11 +15,9 @@ export default function Modal({ onClose, largeImageURL }) {
     };
 
     window.addEventListener('keydown', handleKeyDown);
-    console.log('addEventListener');
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
-      console.log('removeEventListener');
     };
   }, [onClose]);
 
